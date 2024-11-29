@@ -12,7 +12,7 @@ app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(express.json());  // Parse JSON data
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public'))); // Usamos path.join para resolver la ruta
+app.use(express.static('public'));
 require('dotenv').config();
 
 const cookieParser = require('cookie-parser');
@@ -178,4 +178,5 @@ app.post('/logout', (req, res) => {
 app.listen(3001, () => {
   console.log('Server running on port 3001');
 });
+
 
